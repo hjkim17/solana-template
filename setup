@@ -1,0 +1,19 @@
+#!/bin/bash
+
+mkdir -p ./programs/so
+
+npm install --save @solana/web3.js
+npm install --save borsh
+npm install --save typescript ts-node
+npm install --save @types/mz
+npm install --save yaml
+
+# node v14 is recommended for client
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+# command set
+# solana-test-validator -r --rpc-port <port#>
+# solana program deploy ./programs/so/<libraryname>.so
+# ./node_modules/.bin/ts-node ./clients/test-client/main.ts lib
